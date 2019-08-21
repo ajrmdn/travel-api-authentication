@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class V1::ReviewsController < ApplicationController
 
   def index
     @destination = Destination.find(params[:destination_id])

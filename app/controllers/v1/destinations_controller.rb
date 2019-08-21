@@ -1,4 +1,4 @@
-class DestinationsController < ApplicationController
+class V1::DestinationsController < ApplicationController
 
   def index
     @destinations = Destination.all
@@ -32,6 +32,11 @@ class DestinationsController < ApplicationController
     render status: 200, json: {
      message: "This destination has been destroyed."
      }
+  end
+
+  def random
+    @destination = Destination.random
+    json_response(@destination)
   end
 
   private
